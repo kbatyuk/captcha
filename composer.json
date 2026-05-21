@@ -12,21 +12,33 @@
     "require": {
         "php": ">=7.4"
     },
-    "require-dev": {},
+    "require-dev": {
+        "composer/installers": "~1.0"
+    },
     "autoload": {
         "psr-4": {
             "Captcha\\": "src/"
         }
     },
+    "extra": {
+        "installer-paths": {
+            "/var/html/www/captcha": ["kbatyuk/captcha"]
+        }
+    },
     "scripts": {
         "post-install-cmd": [
-            "@check-fonts"
+            "@check-fonts",
+            "@set-permissions"
         ],
         "post-update-cmd": [
-            "@check-fonts"
+            "@check-fonts",
+            "@set-permissions"
         ],
         "check-fonts": [
             "php -r \"$fonts = ['/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf']; $missing = array_filter($fonts, function($f) { return !file_exists($f); }); if (!empty($missing)) { echo '\\n⚠️  WARNING: Required CAPTCHA fonts are missing:\\n'; foreach ($missing as $font) echo '  - ' . $font . '\\n'; echo '\\nOn Ubuntu/Debian: sudo apt-get install fonts-dejavu fonts-liberation\\n'; echo 'On CentOS/RHEL: sudo yum install dejavu-fonts liberation-fonts\\n'; echo 'On macOS: brew install font-dejavu font-liberation\\n'; exit(1); } else { echo '✓ All required CAPTCHA fonts found.\\n'; }\""
+        ],
+        "set-permissions": [
+            "php -r \"if (file_exists('/var/html/www/captcha')) { chmod('/var/html/www/captcha', 0755); @chmod('/var/html/www/captcha/captcha-image.php', 0644); @chmod('/var/html/www/captcha/captcha.php', 0644); echo '✓ Directory permissions set.\\n'; }\""
         ]
     }
 }
