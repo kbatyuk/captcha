@@ -17,5 +17,16 @@
         "psr-4": {
             "Captcha\\": "src/"
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@check-fonts"
+        ],
+        "post-update-cmd": [
+            "@check-fonts"
+        ],
+        "check-fonts": [
+            "php -r \"$fonts = ['/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf']; $missing = array_filter($fonts, function($f) { return !file_exists($f); }); if (!empty($missing)) { echo '\\n⚠️  WARNING: Required CAPTCHA fonts are missing:\\n'; foreach ($missing as $font) echo '  - ' . $font . '\\n'; echo '\\nOn Ubuntu/Debian: sudo apt-get install fonts-dejavu fonts-liberation\\n'; echo 'On CentOS/RHEL: sudo yum install dejavu-fonts liberation-fonts\\n'; echo 'On macOS: brew install font-dejavu font-liberation\\n'; exit(1); } else { echo '✓ All required CAPTCHA fonts found.\\n'; }\""
+        ]
     }
 }
