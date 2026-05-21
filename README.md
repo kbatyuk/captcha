@@ -11,7 +11,7 @@ A PHP library for generating and validating CAPTCHA (Completely Automated Public
 - Lightweight and fast
 
 ## Installation
-
+### PLEASE REFERE TO INSTALLATION.md FOR COMPLETE INSTALLATION INSTRUCTIONS
 Install via Composer:
 
 ```bash
