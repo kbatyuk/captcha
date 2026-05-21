@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Check | WHOI Data Library & Archives</title>
+    <title>Security Check</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         h2 { 
-            color: var(--whoi-blue); 
+            color: var(---blue); 
             margin: 0 0 10px 0; 
             font-size: 1.8rem; 
             font-weight: 700;
@@ -102,14 +102,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         input[type="text"]:focus { 
-            border-color: var(--whoi-blue); 
+            border-color: var(---blue); 
             outline: none; 
             box-shadow: 0 0 0 4px rgba(15, 57, 95, 0.1); 
         }
 
         /* Primary Button */
         button { 
-            background-color: var(--whoi-blue); 
+            background-color: var(---blue); 
             color: white; 
             border: none; 
             padding: 16px; 
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         button:hover { 
-            background-color: var(--whoi-hover); 
+            background-color: var(---hover); 
         }
 
         .error { 
@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="card">
         <h2>Security Check</h2>
-        <p>Please enter the characters shown below to continue to the <strong>WHOI Data Archives</strong>.</p>
+        <p>Please enter the characters shown below to continue to the <strong>website</strong>.</p>
         
         <form method="POST" action="">
             <div class="captcha-box">
