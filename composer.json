@@ -1,0 +1,21 @@
+{
+    "name": "kbatyuk/captcha",
+    "description": "A PHP library for generating and validating CAPTCHA tokens to protect applications from automated abuse",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kbatyuk",
+            "email": "kbatyuk@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Captcha\\": "src/"
+        }
+    }
+}
